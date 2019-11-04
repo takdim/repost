@@ -1,4 +1,5 @@
 latihanPraktikum = sandi morse
+latihanPraktikum2 = self dividing number
 MovieList = Refrensi buat tugas1 modul
 Praktikum1 = Praktikum 1 di modul
 praktikum1coba = praktukum1 di modul,tapi dengan zonk movie di awal
