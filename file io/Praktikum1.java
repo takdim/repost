@@ -7,8 +7,10 @@ class Praktikum1{
         FileInputStream in =null;
         FileOutputStream out =null;
         try{
-            in= new FileInputStream(pew.next());
-            out = new FileOutputStream(pew.next());
+            String hehe = pew.next();
+            String haha = pew.next();
+            in= new FileInputStream(hehe + ".txt");
+            out = new FileOutputStream(haha + ".txt");
             int data;
             while((data = in.read()) != -1){
                 out.write(data);
