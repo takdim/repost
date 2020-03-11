@@ -25,8 +25,8 @@ public class Player {
         energy = 100;
         money = 100;
         items = new ArrayList<>();
-        items.add(new Item("Hp potion", 20, "+20 Hp"));
-        items.add(new Item("Hp potion", 20, "+20 Hp"));
+        items.add(new Item("Hp Potion", 20, "+20 Hp"));
+        items.add(new Item("Hp Potion", 20, "+20 Hp"));
 
     }
     public List<Item> getItem(){
@@ -53,12 +53,15 @@ public class Player {
 
     public void showStatus(){
         System.out.println();
+        System.out.println("+-----------------------------+");
         System.out.println("name " + name);
         System.out.println("role " + role);
         System.out.println("level " + level);
         System.out.println("hp " + hp);
+        System.out.println("attack power " + damage);
         System.out.println("energy " + energy);
         System.out.println("money " + money);
+        System.out.println("+-----------------------------+");
         System.out.println();
     }
 
@@ -117,12 +120,13 @@ public class Player {
 
     public void healing(Player player){
         if(!dead(player)){
-            if(player.hp >= 100){
+            if((player.hp + 20) >= 100){
                 player.hp = 100;
                 System.out.println("Hp max!");
             }else{
                 for (int i = 0; i < items.size(); i++) {
                     if(items.get(i).hpPotion()){
+                        
                         player.hp += 20;
                         break;
                     }else if(i == items.size()-1){
@@ -135,9 +139,13 @@ public class Player {
 
     public void buy(Player player, int count){
         if(!dead(player)){
-            for (int i = 0; i < count; i++) {
-                items.add(new Item("Hp Potion", 20, "+20 Hp"));
-                money -= 20;
+            if(money >= 20){
+                for (int i = 0; i < count; i++) {
+                    items.add(new Item("Hp Potion", 20, "+20 Hp"));
+                    money -= 20;
+                }
+            }else{
+                System.out.println("cari uang");
             }
         }
 
