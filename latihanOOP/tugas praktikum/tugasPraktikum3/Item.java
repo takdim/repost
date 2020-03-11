@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.ArrayList;
 class Item{
     private String name;
     private int price;
@@ -18,18 +17,14 @@ class Item{
    public int getPrice(){
        return price;
    }
-//    public String getInfo(){
-//         return String.format("Item : %s\n\tDescription : %s\n\tPrice : %d", name, info, price);
-//    }
+   
+   public String getInfo(){
+        return String.format("Item : %s\n\tDescription : %s\n\tPrice : %d", name, info, price);
+   }
 
-    // public void use(){
-    //     name = "---";
-    //     price = 0;
-    //     info = "nothing";
-    // }
 
     public boolean hpPotion(){
-        if(name.equals("Hp Potion")){
+        if(name.equalsIgnoreCase("Hp Potion")){
             return true;
         }
         return false;

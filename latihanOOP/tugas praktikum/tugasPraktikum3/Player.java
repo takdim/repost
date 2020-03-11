@@ -10,7 +10,7 @@ public class Player {
     private String name;
     private String role;
     private int level;
-    private double damage;
+    private int damage;
     private double hp;
     private double energy;
     private int money;
@@ -75,12 +75,12 @@ public class Player {
         System.out.println();
     }
     public void sell(int count){
-        int jual = items.get(count).getPrice();
+        //int jual = items.get(count).getPrice();
         System.out.println("sell this item?");
         String answer = pew.next().toLowerCase();
         if(answer.equals("y")){
             items.remove(count);
-            money += 20;
+            money += 15;
         }
         
     }
@@ -99,16 +99,8 @@ public class Player {
         }
         //normal attack
         player.hp = player.hp -damage;
-        return String.format("%s received %f damage", name, damage);
+        return String.format("%s received %d damage", name, damage);
     }
-
-    // public boolean attack(Player player){
-    //     if(!dead(player)){
-    //         System.out.println(player.getDamage());
-    //         // damage += 3;
-    //         // money += 30;
-    //     }return false;
-    // }
 
     public boolean dead(Player player){
         if(player.hp <= 0){
